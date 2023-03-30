@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     <div className='md:px-[8rem]'>
-        <div className='nav--menu px-6 py-4 md:py-0 h-[8rem] md:border-b-2 flex items-center  justify-between'>
+        <div className='nav--menu px-6 py-4 md:py-0 md:h-[8rem] md:border-b-2 flex items-center  justify-between'>
             <div className='flex gap-4 items-center h-full'>
                 <button className='md:hidden' onClick={() => setOpen(!open)}>
                     <img src={icon_menu}  alt='icon-menu'/>
