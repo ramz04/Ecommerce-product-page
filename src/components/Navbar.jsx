@@ -8,6 +8,7 @@ import icon_close from '../assets/images/icon-close.svg'
 function Navbar() {
 
     const [open, setOpen] = useState(false)
+    const [cartDrawer, setCartDrawer] = useState(false)
 
   return (
     <div className='md:px-[8rem]'>
@@ -33,7 +34,7 @@ function Navbar() {
                 <div>
                     <img src={cart} className='md:w-[25px]' />
                 </div>
-                <img src={avatar} className='w-[30px] md:w-[40px] hover:ring-2 rounded-full hover:ring-Orange' />
+                <img src={avatar} className='w-[30px] cursor-pointer md:w-[40px] hover:ring-2 rounded-full hover:ring-Orange' />
             </div>
         </div>
         <div aria-checked={!open} className='nav--drawer h-screen aria-checked:-translate-x-full transition-transform ease-in-out fixed bg-orange w-[70%] z-40 left-0 top-0'>
