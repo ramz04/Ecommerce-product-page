@@ -31,7 +31,7 @@ function Navbar() {
             </div>
             <div className='flex gap-4 md:gap-10 items-center'>
                 <div>
-                    <img src={cart} classname='md:w-[40px]' />
+                    <img src={cart} className='md:w-[40px]' />
                 </div>
                 <img src={avatar} className='w-[30px] md:w-[40px] hover:ring-2 rounded-full hover:ring-Orange' />
             </div>
