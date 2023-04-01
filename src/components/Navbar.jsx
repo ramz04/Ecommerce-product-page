@@ -15,7 +15,7 @@ function Navbar() {
     }
 
   return (
-    <div className='md:px-[10rem]'>
+    <div className='md:px-[8rem]'>
         <div className='nav--menu px-6 py-4 md:px-0 md:py-0 md:h-[8rem] shadow-md md:shadow-none md:border-b-2 flex items-center  justify-between'>
             <div className='flex gap-4 items-center h-full'>
                 <button className='md:hidden' onClick={() => setOpen(!open)}>

@@ -50,7 +50,7 @@ function subtract(){
 }
 
   return (
-    <div className='home--page md:px-[14rem] md:grid md:grid-cols-2 md:mt-20'>
+    <div className='home--page md:px-[10rem] md:grid md:grid-cols-2 md:mt-20'>
       <div className='image--carousel-mobile md:hidden max-w-[100%] w-full m-auto relative h-[300px]'>
         <div style={{backgroundImage: `url(${data[currentIndex].url})`}} className="w-full h-full bg-center bg-cover bg-no-repeat duration-500">
           <div onClick={prevSlide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 rounded-full px-3 py-1 bg-white cursor-pointer'>
