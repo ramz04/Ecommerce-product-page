@@ -8,7 +8,11 @@ import icon_close from '../assets/images/icon-close.svg'
 function Navbar() {
 
     const [open, setOpen] = useState(false)
-    const [cartDrawer, setCartDrawer] = useState(false)
+    const [cartDrawer, setCartDrawer] = useState(true)
+
+    function cartOpen(){
+        setCartDrawer(prevCartDrawer => !prevCartDrawer)
+    }
 
   return (
     <div className='md:px-[8rem]'>
@@ -31,8 +35,17 @@ function Navbar() {
                 </div>
             </div>
             <div className='flex gap-4 md:gap-10 items-center'>
-                <div>
-                    <img src={cart} className='md:w-[25px]' />
+                <div onClick={cartOpen} type='button'>
+                    <img src={cart} className='md:w-[25px] cursor-pointer' />
+                    <div aria-checked={cartDrawer} className='aria-checked:invisible absolute   inset-x-4 top-20 rounded-lg z-20 h-[250px] bg-white'>
+                        <div className='p-6'>
+                            <h3 className='font-bold font-kumbh'>Cart</h3>
+                        </div>
+                        <hr />
+                        <div className='flex justify-center text-Darkgrayishblue font-bold items-center h-[60%]'>
+                            Your cart is empty
+                        </div>
+                    </div>
                 </div>
                 <img src={avatar} className='w-[30px] cursor-pointer md:w-[40px] hover:ring-2 rounded-full hover:ring-Orange' />
             </div>
