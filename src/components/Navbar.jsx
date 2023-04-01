@@ -15,7 +15,7 @@ function Navbar() {
     }
 
   return (
-    <div className='md:px-[8rem]'>
+    <div className='md:px-[10rem]'>
         <div className='nav--menu px-6 py-4 md:px-0 md:py-0 md:h-[8rem] shadow-md md:shadow-none md:border-b-2 flex items-center  justify-between'>
             <div className='flex gap-4 items-center h-full'>
                 <button className='md:hidden' onClick={() => setOpen(!open)}>
@@ -37,7 +37,7 @@ function Navbar() {
             <div className='flex gap-4 md:gap-10 items-center'>
                 <div onClick={cartOpen} type='button'>
                     <img src={cart} className='md:w-[25px] cursor-pointer' />
-                    <div aria-checked={cartDrawer} className='aria-checked:invisible absolute   inset-x-4 top-20 rounded-lg z-20 h-[250px] bg-white'>
+                    <div aria-checked={cartDrawer} className='aria-checked:invisible absolute   inset-x-4 md:w-[370px] shadow-xl top-20 md:top-32 md:left-[1000px] rounded-lg z-20 h-[250px] bg-white'>
                         <div className='p-6'>
                             <h3 className='font-bold font-kumbh'>Cart</h3>
                         </div>
