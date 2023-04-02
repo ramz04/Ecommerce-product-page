@@ -50,22 +50,23 @@ function Navbar() {
                 <img src={avatar} className='w-[30px] cursor-pointer md:w-[40px] hover:ring-2 rounded-full hover:ring-Orange' />
             </div>
         </div>
-        <div aria-checked={!open} className='nav--drawer h-screen aria-checked:-translate-x-full transition-transform ease-in-out fixed bg-orange w-[70%] z-40 left-0 top-0'>
-            <div className='w-full h-full  bg-white shadow-xl duration-300 backdrop:brightness-50 '>
-                <button className='py-4 px-6' onClick={() => setOpen(!open)}>
-                    <img src={icon_close} />
-                </button>
-                <div className='flex pl-6 font-kumbh mt-10 md:h-full md:text-sm'>
-                        <ul className='flex flex-col gap-6 tracking-wide w-full items-start font-bold'>
-                            <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Collections</a></li>
-                            <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Men</a></li>
-                            <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Women</a></li>
-                            <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">About</a></li>
-                            <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Contacts</a></li>
-                        </ul>
-                    </div>
+        <div aria-checked={!open} className=' aria-checked:invisible absolute inset-0 bg-black bg-opacity-50 z-50 transition-transform ease-in-out'>
+            <div aria-checked={!open} className='nav--drawer h-screen aria-checked:-translate-x-full transition-transform ease-in-out fixed bg-orange w-[70%] z-40 left-0 top-0'>
+                <div className='w-full h-full  bg-white shadow-xl duration-300 backdrop:brightness-50 '>
+                    <button className='py-4 px-6' onClick={() => setOpen(!open)}>
+                        <img src={icon_close} />
+                    </button>
+                    <div className='flex pl-6 font-kumbh mt-10 md:h-full md:text-sm'>
+                            <ul className='flex flex-col gap-6 tracking-wide w-full items-start font-bold'>
+                                <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Collections</a></li>
+                                <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Men</a></li>
+                                <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Women</a></li>
+                                <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">About</a></li>
+                                <li className='text-Verydarkblue w-full hover:border-r-4 hover:border-Orange'><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                </div>
             </div>
-
         </div>
     </div>
   )

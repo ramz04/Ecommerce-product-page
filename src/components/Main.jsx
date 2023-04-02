@@ -1,34 +1,45 @@
 import React, {useState} from 'react'
 import image_1 from '../assets/images/image-product-1.jpg'
+import image_1_thumbnail from '../assets/images/image-product-1-thumbnail.jpg'
 import image_2 from '../assets/images/image-product-2.jpg'
+import image_2_thumbnail from '../assets/images/image-product-2-thumbnail.jpg'
 import image_3 from '../assets/images/image-product-3.jpg'
+import image_3_thumbnail from '../assets/images/image-product-3-thumbnail.jpg'
 import image_4 from '../assets/images/image-product-4.jpg'
+import image_4_thumbnail from '../assets/images/image-product-4-thumbnail.jpg'
 import icon_next from '../assets/images/icon-next.svg'
 import icon_previous from '../assets/images/icon-previous.svg'
 import icon_minus from '../assets/images/icon-minus.svg'
 import icon_plus from '../assets/images/icon-plus.svg'
-import cart from '../assets/images/icon-cart.svg'
+import {FaChevronLeft, FaChevronRight} from 'react-icons/fa'
+import Lightbox from './Lightbox'
 
 
 function Main() {
 
   const data = [
     {
-        url:`${image_1}`
+        url:`${image_1}`,
+        thumbnail:`${image_1_thumbnail}`,
     },
     {
-        url:`${image_2}`
+        url:`${image_2}`,
+        thumbnail:`${image_2_thumbnail}`,
     },
     {
-        url:`${image_3}`
+        url:`${image_3}`,
+        thumbnail:`${image_3_thumbnail}`,
     },
     {
-        url:`${image_4}`
+        url:`${image_4}`,
+        thumbnail:`${image_4_thumbnail}`,
     },
 ]
 
 const [currentIndex, setCurrentIndex] = useState(0)
 const [count, setCount] = useState(0)
+const [products] = useState(data)
+const [lightbox, setLightbox] = useState(false)
 
 const prevSlide = () => {
   const isFirstSlide = currentIndex === 0;
@@ -49,20 +60,44 @@ function subtract(){
   setCount(prevCount => prevCount < 1 ? 0 : prevCount - 1)
 }
 
+const imageCarousel = products.map((items, index) => (
+    <li 
+      key={index}
+      onClick={() => goToSlide(index)}
+      className='cursor-pointer'>
+          <img src={items.thumbnail} alt="" className={`${ index === currentIndex && "border-orange-600 border-2 opacity-75" } border-2 rounded-2xl cursor-pointer`}/>
+      </li>
+))
+
+const goToSlide = (index) => {
+  setCurrentIndex(index)
+}
+
+console.log(imageCarousel)
+
   return (
     <div className='home--page md:px-[10rem] md:grid md:grid-cols-2 md:mt-20'>
       <div className='image--carousel-mobile md:hidden max-w-[100%] w-full m-auto relative h-[300px]'>
         <div style={{backgroundImage: `url(${data[currentIndex].url})`}} className="w-full h-full bg-center bg-cover bg-no-repeat duration-500">
-          <div onClick={prevSlide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 rounded-full px-3 py-1 bg-white cursor-pointer'>
-          <button><img src={icon_previous} className='w-[10px] h-[12px]' /></button>
+          <div onClick={prevSlide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-4 rounded-full px-3 py-2 bg-white cursor-pointer'>
+          <button><FaChevronLeft /></button>
           </div>
-          <div onClick={nextSlide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 rounded-full px-3 py-1 bg-white text-white cursor-pointer'>
-            <button ><img src={icon_next} className='w-[10px] h-[12px]' /></button>
+          <div onClick={nextSlide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-4 rounded-full px-3 py-2 bg-white cursor-pointer'>
+            <button ><FaChevronRight /></button>
           </div>
         </div>
       </div>
       <div className='h-full hidden md:flex flex-col'>
-        <img src={image_1} className='h-[445px] w-[450px] rounded-lg '/>
+        <img src={data[currentIndex].url} className='rounded-lg '/>
+        <ul className='flex items-center justify-between gap-4 mt-3'>
+          {imageCarousel}
+        </ul>
+        <Lightbox 
+        lbox={!lightbox}
+        image={data[currentIndex].url}
+        previousslide={prevSlide}
+        nextslide={nextSlide}
+        className='hidden md:flex' />
       </div>
       <div className='main--section p-6 font-kumbh'>
         <h3 className='font-kumbh uppercase tracking-wide font-bold text-Orange'>sneaker company</h3>
