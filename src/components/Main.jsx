@@ -92,12 +92,12 @@ console.log(imageCarousel)
         <ul className='flex items-center justify-between gap-4 mt-3'>
           {imageCarousel}
         </ul>
-        <Lightbox 
+        {/* <Lightbox 
         lbox={!lightbox}
         image={data[currentIndex].url}
         previousslide={prevSlide}
         nextslide={nextSlide}
-        className='hidden md:flex' />
+        className='hidden md:flex' /> */}
       </div>
       <div className='main--section p-6 font-kumbh'>
         <h3 className='font-kumbh uppercase tracking-wide font-bold text-Orange'>sneaker company</h3>

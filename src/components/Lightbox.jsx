@@ -13,7 +13,7 @@ import { useState } from 'react'
 
 
 
-function Lightbox() {
+function Lightbox(props) {
 
     const data = [
         {
