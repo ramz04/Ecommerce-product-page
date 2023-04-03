@@ -65,7 +65,7 @@ const imageCarousel = products.map((items, index) => (
       key={index}
       onClick={() => goToSlide(index)}
       className='cursor-pointer'>
-          <img src={items.thumbnail} alt="" className={`${ index === currentIndex && "border-orange-600 border-2 opacity-75" } w-[90px] border-2 rounded-2xl cursor-pointer`}/>
+          <img src={items.thumbnail} alt="" className={`${ index === currentIndex && "border-orange-600 border-2 opacity-40" } w-[90px] border-2 rounded-2xl cursor-pointer`}/>
       </li>
 ))
 
