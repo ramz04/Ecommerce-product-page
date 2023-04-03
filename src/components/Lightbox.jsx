@@ -22,10 +22,10 @@ function Lightbox(props) {
             <button onClick={props.closelbox} className='self-end cursor-pointer'><img src={close} className='w-10 h-10 ' alt="" /></button>
             <div className='image--carousel-mobile hidden md:flex items-center justify-center max-w-[100%] w-[600px] m-auto relative h-[600px] '>
                 <div style={{backgroundImage: `url(${props.image})`}} className="w-full h-full bg-center bg-cover bg-no-repeat rounded-xl duration-500">
-                <div onClick={props.previousslide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] left-4 rounded-full px-3 py-2 bg-white cursor-pointer'>
+                <div onClick={props.previousslide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] -left-5 rounded-full px-3 py-2 bg-white cursor-pointer'>
                 <button><FaChevronLeft /></button>
                 </div>
-                <div onClick={props.nextslide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] right-4 rounded-full px-3 py-2 bg-white cursor-pointer'>
+                <div onClick={props.nextslide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] -right-5 rounded-full px-3 py-2 bg-white cursor-pointer'>
                     <button ><FaChevronRight /></button>
                 </div>
                 </div>

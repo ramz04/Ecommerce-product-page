@@ -4,6 +4,9 @@ import logo from '../assets/images/logo.svg'
 import cart from '../assets/images/icon-cart.svg'
 import avatar from '../assets/images/image-avatar.png'
 import icon_close from '../assets/images/icon-close.svg'
+import thumbnail from '../assets/images/image-product-1-thumbnail.jpg'
+import icon_delete from '../assets/images/icon-delete.svg'
+
 
 function Navbar() {
 
@@ -16,7 +19,7 @@ function Navbar() {
 
   return (
     <div className='md:px-[8rem]'>
-        <div className='nav--menu px-6 py-4 md:px-0 md:py-0 md:h-[8rem] shadow-md md:shadow-none md:border-b-2 flex items-center  justify-between'>
+        <div className='nav--menu px-6 py-4 md:px-0 md:py-0 md:h-[6rem] shadow-md md:shadow-none md:border-b-2 flex items-center  justify-between'>
             <div className='flex gap-4 items-center h-full'>
                 <button className='md:hidden' onClick={() => setOpen(!open)}>
                     <img src={icon_menu}  alt='icon-menu'/>
@@ -37,14 +40,22 @@ function Navbar() {
             <div className='flex gap-4 md:gap-10 items-center'>
                 <div onClick={cartOpen} type='button'>
                     <img src={cart} className='md:w-[25px] cursor-pointer' />
-                    <div aria-checked={cartDrawer} className='aria-checked:invisible absolute   inset-x-4 md:w-[370px] shadow-xl top-20 md:top-32 md:left-[1000px] rounded-lg z-20 h-[250px] bg-white'>
+                    <div aria-checked={cartDrawer} className='aria-checked:invisible absolute w-[21.5rem] right-4 md:right-20 shadow-xl top-20  md:top-28 md:w-[22rem] rounded-lg z-20 h-[250px] bg-white'>
                         <div className='p-6'>
                             <h3 className='font-bold font-kumbh'>Cart</h3>
                         </div>
                         <hr />
-                        <div className='flex justify-center text-Darkgrayishblue font-bold items-center h-[60%]'>
-                            Your cart is empty
+                        <div className='flex px-6 py-3 text-Darkgrayishblue  items-center'>
+                            <div className='flex items-center gap-4 font-kumbh '>
+                                <img src={thumbnail} className='rounded-lg w-14' />
+                                <ul className='text-sm'>
+                                    <li>Fall Limited Edition Sneakers</li>
+                                    <li>$125.00 x 3 <span className='font-bold text-slate-900'>$375.00</span> </li>
+                                </ul>
+                                <button><img src={icon_delete} alt="" /></button>
+                            </div>
                         </div>
+                        <div className='px-6'><button className='mt-3 w-full rounded-lg text-white font-bold hover:bg-orange-300 bg-Orange py-3'>Checkout</button></div>
                     </div>
                 </div>
                 <img src={avatar} className='w-[30px] cursor-pointer md:w-[40px] hover:ring-2 rounded-full hover:ring-Orange' />
