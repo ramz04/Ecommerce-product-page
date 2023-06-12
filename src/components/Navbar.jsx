@@ -39,7 +39,10 @@ function Navbar() {
             </div>
             <div className='flex gap-4 md:gap-10 items-center'>
                 <div onClick={cartOpen} type='button'>
-                    <img src={cart} className='md:w-[25px] cursor-pointer' />
+                    <div className='relative'>
+                        <img src={cart} className='md:w-[25px] cartbtn cursor-pointer' />
+                        <span class="cartbtn--badge">2</span>
+                    </div>
                     {cartDrawer && <div className='absolute w-[21.5rem] right-4 md:right-20 shadow-xl top-20  md:top-28 md:w-[22rem] rounded-lg z-20 h-[250px] bg-white'>
                         <div className='p-6'>
                             <h3 className='font-bold font-kumbh'>Cart</h3>
