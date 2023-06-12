@@ -19,7 +19,7 @@ function Lightbox(props) {
   return (
     <div aria-checked={props.lbox} className='bg-black bg-opacity-50 aria-checked:hidden h-screen md:flex justify-center items-center inset-0 z-50 fixed'>
         <div className='flex flex-col items-center gap-8'>
-            <button onClick={props.closelbox} className='self-end cursor-pointer'><img src={close} className='w-10 h-10 ' alt="" /></button>
+            <button onClick={props.closelbox} className='self-end lbox cursor-pointer'><img src={close} className='w-10 h-10 ' alt="" /></button>
             <div className='image--carousel-mobile hidden md:flex items-center justify-center max-w-[100%] w-[600px] m-auto relative h-[600px] '>
                 <div style={{backgroundImage: `url(${props.image})`}} className="w-full h-full bg-center bg-cover bg-no-repeat rounded-xl duration-500">
                 <div onClick={props.previousslide} className='absolute top-[50%] -translate-x-0 translate-y-[-50%] -left-5 rounded-full px-3 py-2 bg-white cursor-pointer'>

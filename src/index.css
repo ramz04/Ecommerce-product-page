@@ -4,3 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.lbox {
+    filter: invert(1);
+    filter: brightness(0);
+}
