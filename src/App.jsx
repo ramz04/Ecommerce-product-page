@@ -4,12 +4,13 @@ import Main from './components/Main'
 
 
 function App() {
+  
+
 
   return (
-    <div className="App relative font-kumbh">
-        <Navbar />
-        <Main />
-    </div>
+      <div className="App relative font-kumbh">
+          <Main />
+      </div>
   )
 }
 
